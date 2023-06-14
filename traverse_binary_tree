@@ -1,0 +1,28 @@
+def traverse_binary_tree(root):
+    """Traverse a binary tree in pre-order.
+
+    Args:
+        root (Node): The root node of the binary tree.
+
+    Returns:
+        list: A list of the nodes in pre-order traversal order.
+    """
+    # Create a list to store the nodes
+    nodes = []
+
+    # Check if the root node is None
+    if root is None:
+        return nodes
+
+    # Add the root node to the list
+    nodes.append(root)
+
+    # Traverse the left subtree
+    if root.left is not None:
+        nodes.extend(traverse_binary_tree(root.left))
+
+    # Traverse the right subtree
+    if root.right is not None:
+        nodes.extend(traverse_binary_tree(root.right))
+
+    return nodes
